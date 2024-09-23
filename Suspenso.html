@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROYECTO</title>
+    
+    <style>
+    
+    h1 {
+        text-align: center;
+        color: rgb(20, 46, 197);
+        border-bottom: 5px solid black;
+    }
+    
+    /* CSS para las imágenes en general */
+    img {
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+        box-shadow: 0px 0px 30px #4a108b;
+    }
+    
+    div {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 32px;
+    }
+    
+    /* CSS para las imágenes de búsqueda */
+    .imagen-busqueda {
+        width: 200px; /* Ajusta el tamaño según tus necesidades */
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 30px #e20909;
+    }
+
+    #p1 {
+        height: 100%;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: aliceblue;
+    }
+    
+    
+    
+    @keyframes show{
+        from {
+            opacity: 0; scale: 10%;
+        }
+        
+        to {
+            opacity: 1; scale: 100%;
+        }
+    }
+    
+    img{
+        view-timeline-name: --reveal;
+        animation-name: show;
+        animation-fill-mode: both;
+        animation-timeline: --reveal;
+        animation-range: entry 25% cover 50%;
+    }
+    
+    </style>
+    
+</head>
+<body>
+
+    
+    <div id="resultados"></div>
+
+    <h1><b>Peliculas de suspenso</b></h1>
+    
+    <div id="imagenes-peliculas">
+        <div>
+            <img src="https://scontent.fsvz2-1.fna.fbcdn.net/v/t39.30808-6/418734303_746734274176077_3611009596698846637_n.jpg?stp=dst-jpg_p526x296&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=127cfc&amp;_nc_ohc=JuudNIw6bCcQ7kNvgF97H1s&amp;_nc_ht=scontent.fsvz2-1.fna&amp;_nc_gid=AshrMQUMtvFp77Ewqe7N-L-&amp;oh=00_AYDFNQnvAg24c3Ohuq9z6DVxRqTh88S-BnN4pIUuL2bDiQ&amp;oe=66F29F21">
+        </div>
+    
+        <div>
+            <img width="700" height="1050" src="https://alternativemovieposters.com/wp-content/uploads/2024/09/Jason-Raish_BeetleJuiceBeetleJuice.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://alternativemovieposters.com/wp-content/uploads/2024/09/Jason-Raish_BeetleJuiceBeetleJuice.jpg 700w, https://alternativemovieposters.com/wp-content/uploads/2024/09/Jason-Raish_BeetleJuiceBeetleJuice-200x300.jpg 200w, https://alternativemovieposters.com/wp-content/uploads/2024/09/Jason-Raish_BeetleJuiceBeetleJuice-683x1024.jpg 683w" sizes="(max-width: 700px) 100vw, 700px">
+        </div>
+    
+        <div>
+            <img width="700" height="1050" src="https://alternativemovieposters.com/wp-content/uploads/2024/08/John-Godfrey_friday13_Part5.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://alternativemovieposters.com/wp-content/uploads/2024/08/John-Godfrey_friday13_Part5.jpg 700w, https://alternativemovieposters.com/wp-content/uploads/2024/08/John-Godfrey_friday13_Part5-200x300.jpg 200w, https://alternativemovieposters.com/wp-content/uploads/2024/08/John-Godfrey_friday13_Part5-683x1024.jpg 683w" sizes="(max-width: 700px) 100vw, 700px">
+        </div>
+    
+        <div>
+            <img width="700" height="1050" src="https://alternativemovieposters.com/wp-content/uploads/2024/09/philippe-le-van_creep.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" srcset="https://alternativemovieposters.com/wp-content/uploads/2024/09/philippe-le-van_creep.jpg 700w, https://alternativemovieposters.com/wp-content/uploads/2024/09/philippe-le-van_creep-200x300.jpg 200w, https://alternativemovieposters.com/wp-content/uploads/2024/09/philippe-le-van_creep-683x1024.jpg 683w" sizes="(max-width: 700px) 100vw, 700px">
+        </div>
+    
+        <div>
+            <img width="700" height="1050" src="https://alternativemovieposters.com/wp-content/uploads/2024/08/Sam-Dawson_Scanners.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://alternativemovieposters.com/wp-content/uploads/2024/08/Sam-Dawson_Scanners.jpg 700w, https://alternativemovieposters.com/wp-content/uploads/2024/08/Sam-Dawson_Scanners-200x300.jpg 200w, https://alternativemovieposters.com/wp-content/uploads/2024/08/Sam-Dawson_Scanners-683x1024.jpg 683w" sizes="(max-width: 700px) 100vw, 700px">
+        </div>
+    
+        <div>
+            <img width="700" height="1050" src="https://alternativemovieposters.com/wp-content/uploads/2024/08/DaveOFlanagan_AlienRomulus.jpg" class="attachment-full size-full wp-post-image" alt="Alien Romulus by Dave O'Flanagan" decoding="async" loading="lazy" srcset="https://alternativemovieposters.com/wp-content/uploads/2024/08/DaveOFlanagan_AlienRomulus.jpg 700w, https://alternativemovieposters.com/wp-content/uploads/2024/08/DaveOFlanagan_AlienRomulus-200x300.jpg 200w, https://alternativemovieposters.com/wp-content/uploads/2024/08/DaveOFlanagan_AlienRomulus-683x1024.jpg 683w" sizes="(max-width: 700px) 100vw, 700px">
+        </div>
+    
+        <div>
+            <img width="700" height="990" src="https://alternativemovieposters.com/wp-content/uploads/2024/07/Chris-Berning_The_Craft.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://alternativemovieposters.com/wp-content/uploads/2024/07/Chris-Berning_The_Craft.jpg 700w, https://alternativemovieposters.com/wp-content/uploads/2024/07/Chris-Berning_The_Craft-212x300.jpg 212w" sizes="(max-width: 700px) 100vw, 700px">
+        </div>
+    
+        <div>
+            <img width="700" height="1043" src="https://alternativemovieposters.com/wp-content/uploads/2024/07/Jaime-Ventura_X.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://alternativemovieposters.com/wp-content/uploads/2024/07/Jaime-Ventura_X.jpg 700w, https://alternativemovieposters.com/wp-content/uploads/2024/07/Jaime-Ventura_X-201x300.jpg 201w, https://alternativemovieposters.com/wp-content/uploads/2024/07/Jaime-Ventura_X-687x1024.jpg 687w" sizes="(max-width: 700px) 100vw, 700px">
+        </div>
+    
+        <div>
+            <img width="700" height="1050" src="https://alternativemovieposters.com/wp-content/uploads/2024/07/Jaime-Ventura_MaXXXine.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://alternativemovieposters.com/wp-content/uploads/2024/07/Jaime-Ventura_MaXXXine.jpg 700w, https://alternativemovieposters.com/wp-content/uploads/2024/07/Jaime-Ventura_MaXXXine-200x300.jpg 200w, https://alternativemovieposters.com/wp-content/uploads/2024/07/Jaime-Ventura_MaXXXine-683x1024.jpg 683w" sizes="(max-width: 700px) 100vw, 700px">
+        </div>
+    
+        <div>
+            <img width="700" height="1050" src="https://alternativemovieposters.com/wp-content/uploads/2024/08/Huan-Do_ALIEN_ROMULUS.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://alternativemovieposters.com/wp-content/uploads/2024/08/Huan-Do_ALIEN_ROMULUS.jpg 700w, https://alternativemovieposters.com/wp-content/uploads/2024/08/Huan-Do_ALIEN_ROMULUS-202x300.jpg 202w, https://alternativemovieposters.com/wp-content/uploads/2024/08/Huan-Do_ALIEN_ROMULUS-691x1024.jpg 691w" sizes="(max-width: 700px) 100vw, 700px">
+        </div>
+    
+        <div>
+            <img width="700" height="1050" src="https://alternativemovieposters.com/wp-content/uploads/2024/06/Jaime-Ventura_Pearl.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" srcset="https://alternativemovieposters.com/wp-content/uploads/2024/06/Jaime-Ventura_Pearl.jpg 700w, https://alternativemovieposters.com/wp-content/uploads/2024/06/Jaime-Ventura_Pearl-200x300.jpg 200w, https://alternativemovieposters.com/wp-content/uploads/2024/06/Jaime-Ventura_Pearl-683x1024.jpg 683w" sizes="(max-width: 700px) 100vw, 700px">
+        </div>
+    
+        <div>
+            <img width="700" height="1050" src="https://alternativemovieposters.com/wp-content/uploads/2024/02/Borja-Munoz-gallego_Climax.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://alternativemovieposters.com/wp-content/uploads/2024/02/Borja-Munoz-gallego_Climax.jpg 700w, https://alternativemovieposters.com/wp-content/uploads/2024/02/Borja-Munoz-gallego_Climax-200x300.jpg 200w, https://alternativemovieposters.com/wp-content/uploads/2024/02/Borja-Munoz-gallego_Climax-683x1024.jpg 683w" sizes="(max-width: 700px) 100vw, 700px">
+        </div>
+    
+        <div>
+            <img class="ulterror" width="700" height="1050" src="https://alternativemovieposters.com/wp-content/uploads/2024/02/Jason-Raish_TheThing.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://alternativemovieposters.com/wp-content/uploads/2024/02/Jason-Raish_TheThing.jpg 700w, https://alternativemovieposters.com/wp-content/uploads/2024/02/Jason-Raish_TheThing-200x300.jpg 200w, https://alternativemovieposters.com/wp-content/uploads/2024/02/Jason-Raish_TheThing-683x1024.jpg 683w" sizes="(max-width: 700px) 100vw, 700px">
+        </div>
+        </div>
+        
+
+    <script>const palabrasClave = [
+        { palabra: "drive", id: "drive" },
+        { palabra: "deadpool", id: "deadpool" },
+        { palabra: "avengers", id: "avengers" },
+        { palabra: "jurassic world", id: "jurassic world" },
+        { palabra: "june", id: "june" },
+        { palabra: "guardianes de la galaxia", id: "guardianes de la galaxia" },
+        { palabra: "spider-man", id: "spider-man" },
+        { palabra: "jovenes titanes", id: "jovenes titanes" },
+        { palabra: "top gun", id: "top gun" },
+        { palabra: "juego de tronos", id: "juego de tronos" }
+    ];
+    
+    function buscar() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const resultadosDiv = document.getElementById('resultados');
+        resultadosDiv.innerHTML = ''; // Limpiar resultados anteriores
+    
+        // Ocultar todas las imágenes
+        const imagenesDiv = document.getElementById('imagenes-peliculas');
+        const imagenes = imagenesDiv.getElementsByTagName('div');
+        
+        for (let i = 0; i < imagenes.length; i++) {
+            imagenes[i].style.display = 'none';
+        }
+    
+        // Buscar y mostrar la imagen correspondiente
+        const resultado = palabrasClave.find(item => item.palabra.toLowerCase().includes(input));
+        
+        if (resultado) {
+            const peliculaDiv = document.getElementById(resultado.id);
+            if (peliculaDiv) {
+                peliculaDiv.style.display = 'block';
+                // Aplicar clase para el tamaño de la imagen de búsqueda
+                const img = peliculaDiv.getElementsByTagName('img')[0];
+                if (img) {
+                    img.classList.add('imagen-busqueda');
+                }
+            }
+        } else {
+            resultadosDiv.innerHTML =  "No se encontraron resultados.";
+        }
+    }
+    
+    function mostrarTodas() {
+        // Mostrar todas las imágenes
+        const imagenesDiv = document.getElementById('imagenes-peliculas');
+        const imagenes = imagenesDiv.getElementsByTagName('div');
+        
+        for (let i = 0; i < imagenes.length; i++) {
+            imagenes[i].style.display = 'block';
+            // Eliminar clase de tamaño para mostrar todas las imágenes con el tamaño original
+            const img = imagenes[i].getElementsByTagName('img')[0];
+            if (img) {
+                img.classList.remove('imagen-busqueda');
+            }
+        }
+    }
+    </script>
+    
+</body>
+</html>

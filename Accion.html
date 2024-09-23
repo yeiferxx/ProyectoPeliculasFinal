@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROYECTO</title>
+    
+    <style>
+    
+    h1 {
+        text-align: center;
+        color: rgb(20, 46, 197);
+        border-bottom: 5px solid black;
+    }
+    
+    /* CSS para las imágenes en general */
+    img {
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+        box-shadow: 0px 0px 30px #4a108b;
+    }
+    
+    div {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 32px;
+    }
+    
+    /* CSS para las imágenes de búsqueda */
+    .imagen-busqueda {
+        width: 200px; /* Ajusta el tamaño según tus necesidades */
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 30px #e20909;
+    }
+
+    #p1 {
+        height: 100%;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: aliceblue;
+    }
+    
+    
+    
+    @keyframes show{
+        from {
+            opacity: 0; scale: 10%;
+        }
+        
+        to {
+            opacity: 1; scale: 100%;
+        }
+    }
+    
+    img{
+        view-timeline-name: --reveal;
+        animation-name: show;
+        animation-fill-mode: both;
+        animation-timeline: --reveal;
+        animation-range: entry 25% cover 50%;
+    }
+    
+    </style>
+    
+</head>
+<body>
+
+    
+    <div id="resultados"></div>
+
+    <h1><b>Peliculas de acción</b></h1>
+    
+    <div id="imagenes-peliculas">
+        <div id="drive" >
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_796687-MLA53583558990_022023-F.webp" alt="Guardianes de la Galaxia">
+        </div>
+        <div id="deadpool" >
+            <img src="https://http2.mlstatic.com/D_NQ_NP_942560-MLA77981459169_072024-F.webp" alt="CSS">
+        </div>
+        <div id="avengers" >
+            <img src="https://http2.mlstatic.com/D_NQ_NP_729071-MLA70421240979_072023-F.webp" alt="JavaScript">
+        </div>
+        <div id="jurassic world" >
+            <img src="https://http2.mlstatic.com/D_NQ_NP_860756-MLA48981691803_012022-F.webp" alt="Flexbox">
+        </div>
+        <div id="june" >
+            <img src="https://http2.mlstatic.com/D_NQ_NP_781368-MLA74357984740_022024-F.webp" alt="Matrix">
+        </div>
+        <div id="guardianes de la galaxia" >
+            <img src="https://http2.mlstatic.com/D_NQ_NP_977889-MLA54866040709_042023-O.webp" alt="Inception">
+        </div>
+        <div id="spider-man">
+            <img  src="https://http2.mlstatic.com/D_NQ_NP_2X_656485-MLA69406134589_052023-F.webp" alt="Imagen 1">
+        </div>
+        <div id="jovenes titanes">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_750525-MLA78502624436_082024-F.webp" alt="Imagen 2">
+        </div>
+        <div id="top gun">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_624022-MLA50000369728_052022-O.webp" alt="Imagen 3">
+        </div>
+        <div id="juego de tronos">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_824870-MLA42406376936_062020-F.webp" alt="Imagen 4">
+        </div>
+        </div>
+        
+
+    <script>const palabrasClave = [
+        { palabra: "drive", id: "drive" },
+        { palabra: "deadpool", id: "deadpool" },
+        { palabra: "avengers", id: "avengers" },
+        { palabra: "jurassic world", id: "jurassic world" },
+        { palabra: "june", id: "june" },
+        { palabra: "guardianes de la galaxia", id: "guardianes de la galaxia" },
+        { palabra: "spider-man", id: "spider-man" },
+        { palabra: "jovenes titanes", id: "jovenes titanes" },
+        { palabra: "top gun", id: "top gun" },
+        { palabra: "juego de tronos", id: "juego de tronos" }
+    ];
+    
+    function buscar() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const resultadosDiv = document.getElementById('resultados');
+        resultadosDiv.innerHTML = ''; // Limpiar resultados anteriores
+    
+        // Ocultar todas las imágenes
+        const imagenesDiv = document.getElementById('imagenes-peliculas');
+        const imagenes = imagenesDiv.getElementsByTagName('div');
+        
+        for (let i = 0; i < imagenes.length; i++) {
+            imagenes[i].style.display = 'none';
+        }
+    
+        // Buscar y mostrar la imagen correspondiente
+        const resultado = palabrasClave.find(item => item.palabra.toLowerCase().includes(input));
+        
+        if (resultado) {
+            const peliculaDiv = document.getElementById(resultado.id);
+            if (peliculaDiv) {
+                peliculaDiv.style.display = 'block';
+                // Aplicar clase para el tamaño de la imagen de búsqueda
+                const img = peliculaDiv.getElementsByTagName('img')[0];
+                if (img) {
+                    img.classList.add('imagen-busqueda');
+                }
+            }
+        } else {
+            resultadosDiv.innerHTML =  "No se encontraron resultados.";
+        }
+    }
+    
+    function mostrarTodas() {
+        // Mostrar todas las imágenes
+        const imagenesDiv = document.getElementById('imagenes-peliculas');
+        const imagenes = imagenesDiv.getElementsByTagName('div');
+        
+        for (let i = 0; i < imagenes.length; i++) {
+            imagenes[i].style.display = 'block';
+            // Eliminar clase de tamaño para mostrar todas las imágenes con el tamaño original
+            const img = imagenes[i].getElementsByTagName('img')[0];
+            if (img) {
+                img.classList.remove('imagen-busqueda');
+            }
+        }
+    }
+    </script>
+    
+</body>
+</html>
+

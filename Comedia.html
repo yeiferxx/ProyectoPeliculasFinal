@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROYECTO</title>
+    
+    <style>
+    
+    h1 {
+        text-align: center;
+        color: rgb(20, 46, 197);
+        border-bottom: 5px solid black;
+    }
+    
+    /* CSS para las imágenes en general */
+    img {
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+        box-shadow: 0px 0px 30px #4a108b;
+    }
+    
+    div {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 32px;
+    }
+    
+    /* CSS para las imágenes de búsqueda */
+    .imagen-busqueda {
+        width: 200px; /* Ajusta el tamaño según tus necesidades */
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 30px #e20909;
+    }
+
+    #p1 {
+        height: 100%;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: aliceblue;
+    }
+    
+    
+    
+    @keyframes show{
+        from {
+            opacity: 0; scale: 10%;
+        }
+        
+        to {
+            opacity: 1; scale: 100%;
+        }
+    }
+    
+    img{
+        view-timeline-name: --reveal;
+        animation-name: show;
+        animation-fill-mode: both;
+        animation-timeline: --reveal;
+        animation-range: entry 25% cover 50%;
+    }
+    
+    </style>
+    
+</head>
+<body>
+
+    
+    <div id="resultados"></div>
+
+    <h1><b>Peliculas de comedia</b></h1>
+    
+    <div id="imagenes-peliculas">
+    
+        <div>
+            <img loading="lazy" class="poster w-full" src="https://media.themoviedb.org/t/p/w220_and_h330_face/aQnbNiadeGzGSjWLaXyeNxpAUIx.jpg" srcset="https://media.themoviedb.org/t/p/w220_and_h330_face/aQnbNiadeGzGSjWLaXyeNxpAUIx.jpg 1x, https://media.themoviedb.org/t/p/w440_and_h660_face/aQnbNiadeGzGSjWLaXyeNxpAUIx.jpg 2x" alt="Del revés 2 (Inside Out 2)">
+        </div>
+    
+        <div>
+            <img loading="lazy" class="poster w-full" src="https://media.themoviedb.org/t/p/w220_and_h330_face/zNKs1T0VZuJiVuhuL5GSCNkGdxf.jpg" srcset="https://media.themoviedb.org/t/p/w220_and_h330_face/zNKs1T0VZuJiVuhuL5GSCNkGdxf.jpg 1x, https://media.themoviedb.org/t/p/w440_and_h660_face/zNKs1T0VZuJiVuhuL5GSCNkGdxf.jpg 2x" alt="Super Mario Bros: La película">
+        </div>
+    
+        <div>
+            <img loading="lazy" class="poster w-full" src="https://media.themoviedb.org/t/p/w220_and_h330_face/b5Jb7GoQaqIXy4VEdnQa0UrQZI.jpg" srcset="https://media.themoviedb.org/t/p/w220_and_h330_face/b5Jb7GoQaqIXy4VEdnQa0UrQZI.jpg 1x, https://media.themoviedb.org/t/p/w440_and_h660_face/b5Jb7GoQaqIXy4VEdnQa0UrQZI.jpg 2x" alt="El Gato con Botas: El último deseo">
+        </div>
+    
+        <div>
+            <img loading="lazy" class="poster w-full" src="https://media.themoviedb.org/t/p/w220_and_h330_face/d79DeKDCgFOM23O8Dr6MELZVooY.jpg" srcset="https://media.themoviedb.org/t/p/w220_and_h330_face/d79DeKDCgFOM23O8Dr6MELZVooY.jpg 1x, https://media.themoviedb.org/t/p/w440_and_h660_face/d79DeKDCgFOM23O8Dr6MELZVooY.jpg 2x" alt="Elemental">
+        </div>
+    
+        <div>
+            <img loading="lazy" class="poster w-full" src="https://media.themoviedb.org/t/p/w220_and_h330_face/jTQONM7jt1yv2lL972TtmWO0UIZ.jpg" srcset="https://media.themoviedb.org/t/p/w220_and_h330_face/jTQONM7jt1yv2lL972TtmWO0UIZ.jpg 1x, https://media.themoviedb.org/t/p/w440_and_h660_face/jTQONM7jt1yv2lL972TtmWO0UIZ.jpg 2x" alt="Shrek">
+        </div>
+    
+        <div>
+            <img  loading="lazy" class="poster w-full" src="https://media.themoviedb.org/t/p/w220_and_h330_face/d0ezQ1Jz0lpNsX1skEmIvqRL7mN.jpg" srcset="https://media.themoviedb.org/t/p/w220_and_h330_face/d0ezQ1Jz0lpNsX1skEmIvqRL7mN.jpg 1x, https://media.themoviedb.org/t/p/w440_and_h660_face/d0ezQ1Jz0lpNsX1skEmIvqRL7mN.jpg 2x" alt="Encanto">
+        </div>
+
+        <div>
+            <img loading="lazy" class="poster w-full" src="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/1DY7eSoQLoTNhJTT455N74VuHHx.jpg" srcset="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/1DY7eSoQLoTNhJTT455N74VuHHx.jpg 1x, https://media.themoviedb.org/t/p/w188_and_h282_bestv2/1DY7eSoQLoTNhJTT455N74VuHHx.jpg 2x" alt="Ted">
+        </div>
+    
+        <div>
+            <img loading="lazy" class="poster w-full" src="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/bO59Vn36fQauTDQpKNlHxvcK9Nw.jpg" srcset="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/bO59Vn36fQauTDQpKNlHxvcK9Nw.jpg 1x, https://media.themoviedb.org/t/p/w188_and_h282_bestv2/bO59Vn36fQauTDQpKNlHxvcK9Nw.jpg 2x" alt="Ted 2">
+        </div>
+    
+        <div>
+            <img loading="lazy" class="poster w-full" src="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/bOTrvXIrfVzZa00I2AXCCGI2Nqp.jpg" srcset="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/bOTrvXIrfVzZa00I2AXCCGI2Nqp.jpg 1x, https://media.themoviedb.org/t/p/w188_and_h282_bestv2/bOTrvXIrfVzZa00I2AXCCGI2Nqp.jpg 2x" alt="American Pie">
+        </div>
+    
+        <div>
+            <img loading="lazy" class="poster w-full" src="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/pE99yrphO0UsQRd9bFn8zu4HXuc.jpg" srcset="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/pE99yrphO0UsQRd9bFn8zu4HXuc.jpg 1x, https://media.themoviedb.org/t/p/w188_and_h282_bestv2/pE99yrphO0UsQRd9bFn8zu4HXuc.jpg 2x" alt="American Pie presenta: Fraternidad Beta">
+        </div>
+    
+        <div>
+            <img loading="lazy" class="poster w-full" src="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/7oWhgp3SHexU9Byx97U7Sc8uroW.jpg" srcset="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/7oWhgp3SHexU9Byx97U7Sc8uroW.jpg 1x, https://media.themoviedb.org/t/p/w188_and_h282_bestv2/7oWhgp3SHexU9Byx97U7Sc8uroW.jpg 2x" alt="Pequeño pero matón">
+        </div>
+    
+        <div>
+            <img loading="lazy" class="poster w-full" src="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/8IuTg9XaviDwpfm99IXUUPukrVA.jpg" srcset="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/8IuTg9XaviDwpfm99IXUUPukrVA.jpg 1x, https://media.themoviedb.org/t/p/w188_and_h282_bestv2/8IuTg9XaviDwpfm99IXUUPukrVA.jpg 2x" alt="La máscara">
+        </div>
+    
+        <div>
+            <img loading="lazy" class="poster w-full" src="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/sgg5mR2Iz6QV4eWkqGrTgxOERaH.jpg" srcset="https://media.themoviedb.org/t/p/w94_and_h141_bestv2/sgg5mR2Iz6QV4eWkqGrTgxOERaH.jpg 1x, https://media.themoviedb.org/t/p/w188_and_h282_bestv2/sgg5mR2Iz6QV4eWkqGrTgxOERaH.jpg 2x" alt="Dos rubias de pelo en pecho">
+        </div>
+        </div>
+        
+
+    <script>const palabrasClave = [
+        { palabra: "drive", id: "drive" },
+        { palabra: "deadpool", id: "deadpool" },
+        { palabra: "avengers", id: "avengers" },
+        { palabra: "jurassic world", id: "jurassic world" },
+        { palabra: "june", id: "june" },
+        { palabra: "guardianes de la galaxia", id: "guardianes de la galaxia" },
+        { palabra: "spider-man", id: "spider-man" },
+        { palabra: "jovenes titanes", id: "jovenes titanes" },
+        { palabra: "top gun", id: "top gun" },
+        { palabra: "juego de tronos", id: "juego de tronos" }
+    ];
+    
+    function buscar() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const resultadosDiv = document.getElementById('resultados');
+        resultadosDiv.innerHTML = ''; // Limpiar resultados anteriores
+    
+        // Ocultar todas las imágenes
+        const imagenesDiv = document.getElementById('imagenes-peliculas');
+        const imagenes = imagenesDiv.getElementsByTagName('div');
+        
+        for (let i = 0; i < imagenes.length; i++) {
+            imagenes[i].style.display = 'none';
+        }
+    
+        // Buscar y mostrar la imagen correspondiente
+        const resultado = palabrasClave.find(item => item.palabra.toLowerCase().includes(input));
+        
+        if (resultado) {
+            const peliculaDiv = document.getElementById(resultado.id);
+            if (peliculaDiv) {
+                peliculaDiv.style.display = 'block';
+                // Aplicar clase para el tamaño de la imagen de búsqueda
+                const img = peliculaDiv.getElementsByTagName('img')[0];
+                if (img) {
+                    img.classList.add('imagen-busqueda');
+                }
+            }
+        } else {
+            resultadosDiv.innerHTML =  "No se encontraron resultados.";
+        }
+    }
+    
+    function mostrarTodas() {
+        // Mostrar todas las imágenes
+        const imagenesDiv = document.getElementById('imagenes-peliculas');
+        const imagenes = imagenesDiv.getElementsByTagName('div');
+        
+        for (let i = 0; i < imagenes.length; i++) {
+            imagenes[i].style.display = 'block';
+            // Eliminar clase de tamaño para mostrar todas las imágenes con el tamaño original
+            const img = imagenes[i].getElementsByTagName('img')[0];
+            if (img) {
+                img.classList.remove('imagen-busqueda');
+            }
+        }
+    }
+    </script>
+    
+</body>
+</html>
