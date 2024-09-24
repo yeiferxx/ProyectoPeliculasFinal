@@ -12,20 +12,59 @@
     
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
     
-    
+    <!-- Font Awesome -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-dfVYcT5y0CqJj3CDIdX6s4t+Yg1F9G3IDeYf4vVkz+4+Pj7Fd9K8rYKvyEhGc/nQ+Y6J4xq+Uw6ipqlB8Vd5Hg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
     
     <style>
     
+    /* Variables por defecto para el modo claro */
+    :root {
+        --background-color: #ffffff;
+        --text-color: #000000;
+        --nav-background: #f0f0f0;
+        --button-background: #e0e0e0;
+        --button-text-color: #050202;
+    }
+
+    /* Variables para el modo oscuro */
+    body.dark-mode {
+        --background-color: #121212;
+        --text-color: #ffffff;
+        --nav-background: #1f1f1f;
+        --button-background: #333333;
+        --button-text-color: #ffffff;
+    }
+    
+    .theme-toggle {
+        cursor: pointer;
+        font-size: 1.5rem;
+        padding: 8px;
+        width: 2%;
+    }
+
+    /* Aplicación de las variables */
+    body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        transition: background-color 0.3s, color 0.3s;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+   
         /*ESTILOS PARA LA GALERIA*/
     
         #imagenes-peliculas {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Las imágenes ocuparán el espacio disponible */
             gap: 15px;
-        }
-        #imagenes-peliculas div {
-            flex: 0 0 200px;
+            justify-content: center;
         }
         #imagenes-peliculas img {
             width: 100%;
@@ -36,6 +75,7 @@
         #imagenes-peliculas img:hover {
             transform: scale(1.05);
         }
+        
         /* Estilos para el modal */
         #modall {
             display: none;
@@ -71,16 +111,19 @@
             cursor: pointer;
         }
         
-        #imagenes-peliculas img:hover {
-            transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 600px) {
+            #imagenes-peliculas {
+                grid-template-columns: repeat(2, 1fr); /* Dos imágenes por fila en pantallas pequeñas */
+            }
         }
-    
         
     
     
     /*ESTILOS NUEVOS*/
     
     .menu{
+        background-color: var(--nav-background);
         position:absolute;
         top: 0;
         left: 0;
@@ -105,7 +148,7 @@
     .menu .list-container .lists li{list-style: none;}
     .menu .list-container .lists li a{
         text-decoration: none;
-        color:#fff;
+        --nav-color:var(--background-color);
         font-size: 19px;
         margin:0px 7px;
         padding: 5px;
@@ -126,7 +169,7 @@
             top: 12px;
             right: 30px;
             display: block;
-            color:#fff;
+            --btn--color:var(--btn--color);
             font-size: 30px;
             cursor: pointer;
         }
@@ -187,17 +230,7 @@
     }
     
     /*estilos nuevos mobile*/
-    @media only screen and (max-width:560px) {
     
-        /** Free Content **/
-        .about-us .free-content .icons{
-            display: block;
-            margin:0px;
-            padding:10px 0px;
-        }
-        .about-us .free-content .icons > div{margin:50px 30px;}
-        .about-us .free-content .icons > div > .span-icon{font-size: 55px;}
-    }
     
     /* CSS para las imágenes en general */
     img {
@@ -217,11 +250,7 @@
         filter: contrast(120%);
     }
     
-    div {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 32px;
-    }
+    
     
     /* CSS para las imágenes de búsqueda */
     .imagen-busqueda {
@@ -235,15 +264,12 @@
         height: 100%;
     }
 
-    body {
-        font-family: Arial, sans-serif;
-        background-color: black;
-        color: aliceblue;
-    }
+    
     
     .search-container {
+        background-color: var(--nav-background);
         position: relative;
-        top: 26px;
+        top: 50px;
         display: flex;
         margin: 15px;
         flex-flow: row  wrap;
@@ -258,7 +284,9 @@
     }
     
     button:hover {
-        background-color: rgb(62, 144, 190);
+        background-color: var(--button-background);
+        color: var(--button-text-color);
+        
         transition: 1s;
         padding: 5px;
     }
@@ -323,9 +351,7 @@
         }
     }
     
-    
-    
-    
+
     
     </style>
     
@@ -355,7 +381,15 @@
                 <li><a href="Suspenso.html">Suspenso</a></li>
         </ul>
     </div>
+    
+
 </nav>
+<br>
+<br>
+    <!-- Botón de Modo Claro/Oscuro -->
+    <div class="theme-toggle">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </div>
     
  <!-- Sección de Carrusel de imágenes -->
  <section class="carousel-section">
@@ -540,6 +574,34 @@
 </div>
 
 </div>
+
+
+<script>
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    // Verifica si el usuario ya ha seleccionado un tema previamente
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+
+        // Cambia el icono
+        if (document.body.classList.contains('dark-mode')) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
 
 <script>
     const imagenes = document.querySelectorAll('#imagenes-peliculas img');
